@@ -1,6 +1,7 @@
 package services
 
 import (
+	"errors"
 	"fmt"
 	"notification/core"
 	"notification/entities"
@@ -13,14 +14,23 @@ type OrderService struct {
 	Notifier externalservices.Notifier
 }
 
-func (orderService *OrderService) CreateOrder(order *entities.Order) *entities.Order {
+func (orderService *OrderService) CreateOrder(order *entities.Order) (error, *entities.Order) {
+
+	if order.Status == false {
+		return errors.New("Order is not valid"), order
+	}
+
+	if order.Price < 1000 {
+		return errors.New("Order Price is not valid"), order
+	}
+
 	fmt.Printf("Order created : %v", order)
 	logger.Info().Interface("order", order).Msgf("Order created.")
 	orderService.Notifier = externalservices.NewNotifier(order.NotificationType)
 
 	orderService.Notifier.SendNotify(order.UserId, "Order created")
 
-	return order
+	return nil ,order
 }
 
 func NewOrderService() *OrderService {
