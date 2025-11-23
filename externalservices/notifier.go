@@ -5,7 +5,7 @@ import (
 )
 
 type Notifier interface {
-	SendNotify(receiver string, message string)
+	SendNotify(receiver string, message string) error
 }
 
 func NewNotifier(notificationType entities.NotificationType) Notifier {
