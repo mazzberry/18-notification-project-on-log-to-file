@@ -25,12 +25,14 @@ func (orderService *OrderService) CreateOrder(order *entities.Order) (error, *en
 	}
 
 	fmt.Printf("Order created : %v", order)
+
 	logger.Info().Interface("order", order).Msgf("Order created.")
+	
 	orderService.Notifier = externalservices.NewNotifier(order.NotificationType)
 
-	orderService.Notifier.SendNotify(order.UserId, "Order created")
+	err := orderService.Notifier.SendNotify(order.UserId, "Order created")
 
-	return nil ,order
+	return err ,order
 }
 
 func NewOrderService() *OrderService {
