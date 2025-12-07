@@ -2,17 +2,21 @@
 package main
 
 import (
+	"notification/core"
 	"notification/entities"
 	//"notification/externalservices"
 	"notification/services"
 )
+
+var logger = core.NewFileLogger()
+
 
 func main() {
 	order1 := entities.Order{
 		Id:               1,
 		UserFullName:     "John Doe",
 		UserId:           "09134212531",
-		Price:            2000,
+		Price:            120,
 		Status:           true,
 		NotificationType: entities.Email,
 	}
@@ -36,10 +40,16 @@ func main() {
 	}
 
 	orderService := services.NewOrderService()
-	orderService.CreateOrder(&order1)
-
-	orderService.CreateOrder(&order2)
-
-	orderService.CreateOrder(&order3)
-
+	err, _ :=orderService.CreateOrder(&order1)
+	if err != nil {
+		logger.Error().Interface("entity info", order1).Err(err).Msg("order is not valid")
+	}
+	err, _ =orderService.CreateOrder(&order2)
+	if err != nil {
+		logger.Error().Interface("entity info", order1).Err(err).Msg("order is not valid")
+	}
+	err, _ =orderService.CreateOrder(&order3)
+	if err != nil {
+		logger.Error().Interface("entity info", order1).Err(err).Msg("order is not valid")
+	}
 }

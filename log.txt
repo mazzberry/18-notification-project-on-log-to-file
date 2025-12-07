@@ -1,3 +1,14 @@
 {"level":"info","order":{"Id":1,"UserFullName":"John Doe","UserId":"09134212531","Price":2000,"Status":true,"NotificationType":"Email"},"time":"2025-11-17T09:54:34+03:30","message":"Order created."}
 {"level":"info","order":{"Id":2,"UserFullName":"mahbod akbari","UserId":"09132341231","Price":4000,"Status":true,"NotificationType":"Sms"},"time":"2025-11-17T09:54:34+03:30","message":"Order created."}
 {"level":"info","order":{"Id":2,"UserFullName":"masoud rajavi","UserId":"099990341231","Price":4000,"Status":true,"NotificationType":"Nil"},"time":"2025-11-17T09:54:34+03:30","message":"Order created."}
+{"level":"info","order":{"Id":1,"UserFullName":"John Doe","UserId":"09134212531","Price":2000,"Status":true,"NotificationType":"Email"},"time":"2025-12-07T09:58:56+03:30","message":"Order created."}
+{"level":"info","notifier":"nilNotifyService","Message info":{"receiver":"09134212531","receiver":"09134212531"},"time":"2025-12-07T09:58:56+03:30","message":"Message sent:"}
+{"level":"info","order":{"Id":2,"UserFullName":"mahbod akbari","UserId":"09132341231","Price":4000,"Status":true,"NotificationType":"Sms"},"time":"2025-12-07T09:58:56+03:30","message":"Order created."}
+{"level":"info","notifier":"nilNotifyService","Message info":{"receiver":"09132341231","receiver":"09132341231"},"time":"2025-12-07T09:58:56+03:30","message":"Message sent:"}
+{"level":"info","order":{"Id":2,"UserFullName":"masoud rajavi","UserId":"099990341231","Price":4000,"Status":true,"NotificationType":"Nil"},"time":"2025-12-07T09:58:56+03:30","message":"Order created."}
+{"level":"info","notifier":"nilNotifyService","Message info":{"receiver":"099990341231","receiver":"099990341231"},"time":"2025-12-07T09:58:56+03:30","message":"Message sent:"}
+{"level":"error","entity info":{"Id":1,"UserFullName":"John Doe","UserId":"09134212531","Price":120,"Status":true,"NotificationType":"Email"},"error":"Order Price is not valid","time":"2025-12-07T10:01:17+03:30","message":"order is not valid"}
+{"level":"info","order":{"Id":2,"UserFullName":"mahbod akbari","UserId":"09132341231","Price":4000,"Status":true,"NotificationType":"Sms"},"time":"2025-12-07T10:01:17+03:30","message":"Order created."}
+{"level":"info","notifier":"nilNotifyService","Message info":{"receiver":"09132341231","receiver":"09132341231"},"time":"2025-12-07T10:01:17+03:30","message":"Message sent:"}
+{"level":"info","order":{"Id":2,"UserFullName":"masoud rajavi","UserId":"099990341231","Price":4000,"Status":true,"NotificationType":"Nil"},"time":"2025-12-07T10:01:17+03:30","message":"Order created."}
+{"level":"info","notifier":"nilNotifyService","Message info":{"receiver":"099990341231","receiver":"099990341231"},"time":"2025-12-07T10:01:17+03:30","message":"Message sent:"}
